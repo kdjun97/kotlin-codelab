@@ -20,6 +20,33 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.main_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         bottom_navigation.setupWithNavController(navController) // nav graph setup
+
+        // Navigate Override
+        /*
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.firstFragment -> {
+                    Log.d("BottomNavBar", "First Fragment 클릭")
+                    navController.navigate(R.id.firstFragment)
+                    true
+                }
+                R.id.secondFragment -> {
+                    Log.d("BottomNavBar", "Second Fragment 클릭")
+                    navController.navigate(R.id.secondFragment)
+                    true
+                }
+                R.id.thirdFragment -> {
+                    Log.d("BottomNavBar", "Third Fragment 클릭")
+                    navController.navigate(R.id.thirdFragment)
+                    true
+                }
+                else -> {
+                    Log.d("BottomNavBar", "Error")
+                    false
+                }
+            }
+        }
+        */
     }
 
     override fun onStart() {

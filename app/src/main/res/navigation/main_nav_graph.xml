@@ -10,16 +10,56 @@
         android:name="com.example.kotlin_codelab.view.fragment.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
-
+        <argument
+            android:name="paging"
+            app:argType="integer">
+        </argument>
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.kotlin_codelab.view.fragment.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.example.kotlin_codelab.view.fragment.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_thirdFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_thirdFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.kotlin_codelab.view.fragment.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth">
+        <argument
+            android:name="paging"
+            app:argType="integer">
+        </argument>
+        <action
+            android:id="@+id/action_fourthFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
