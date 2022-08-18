@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import com.example.kotlin_codelab.R
 
 class ThirdFragment : Fragment() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("Fragment LifeCycle", "Third Fragment onCreate!")
         super.onCreate(savedInstanceState)
