@@ -26,3 +26,4 @@
 - Bottom Navigation 완료, navGraph 버전 2.4.0-alpha01 완료, FragmentConatinerView 사용
 - Safe Args로 Fragment간 데이터 교환 완료
 - Mission1 완료
+- Mission2 완료

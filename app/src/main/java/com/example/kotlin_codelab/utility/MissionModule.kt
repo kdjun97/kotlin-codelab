@@ -1,6 +1,7 @@
 package com.example.kotlin_codelab.utility
 
 import com.example.kotlin_codelab.repository.MissionRepository
+import com.example.kotlin_codelab.viewmodel.MyViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
