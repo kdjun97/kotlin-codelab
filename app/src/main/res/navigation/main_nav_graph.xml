@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_first" >
         <argument
             android:name="paging"
-            app:argType="integer">
+            app:argType="integer"
+            android:defaultValue="0">
         </argument>
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
@@ -59,7 +60,6 @@
         </argument>
         <action
             android:id="@+id/action_fourthFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
-            android:defaultValue="0" />
+            app:destination="@id/firstFragment"/>
     </fragment>
 </navigation>

@@ -71,7 +71,10 @@ class FourthFragment : Fragment() {
 
     // hidden button binding
     fun btnHidden(view : View) {
-        var args = FourthFragmentDirections.actionFourthFragmentToFirstFragment(4)
+        // FirstFragment에서 default value를 사용하기 위해 이런식으로 써 주었음.
+        var args = FourthFragmentDirections.actionFourthFragmentToFirstFragment().apply {
+            paging = 4
+        }
         findNavController().navigate(args)
     }
 }

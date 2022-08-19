@@ -8,16 +8,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.kotlin_codelab.R
 import com.example.kotlin_codelab.databinding.FragmentFirstBinding
+import com.example.kotlin_codelab.viewmodel.MyViewModel
+import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
     var toastMsg : String = ""
     private lateinit var binding: FragmentFirstBinding
+    private val myViewModel : MyViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("Fragment LifeCycle", "First Fragment onCreate!")
@@ -40,13 +46,9 @@ class FirstFragment : Fragment() {
         Log.d("Fragment LifeCycle", "First Fragment onViewCreated!")
 
         toastMsg = ""
-        try {
-            val args: FourthFragmentArgs by navArgs()
-            toastMsg += args.paging.toString()
-        } catch (e: Exception) {
-            toastMsg = "0" // 처음엔 safe args로 받을 값이 없음
-        }
-
+        val args: FourthFragmentArgs by navArgs()
+        toastMsg += args.paging.toString()
+        observeData()
     }
 
     override fun onStart() {
@@ -54,6 +56,7 @@ class FirstFragment : Fragment() {
         Log.d("Fragment LifeCycle", "First Fragment onStart!")
         toastMsg += "에서 1번으로 페이지 이동 완료!"
         Toast.makeText(context, toastMsg, Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onResume() {
@@ -81,5 +84,17 @@ class FirstFragment : Fragment() {
         var args = FirstFragmentDirections.actionFirstFragmentToFourthFragment(1)
         findNavController().navigate(args)
         //findNavController().navigate(R.id.action_firstFragment_to_fourthFragment)
+    }
+
+    // 버튼을 눌렀을 때 1씩 증가
+    fun btnAdd(view : View) {
+        myViewModel.addMission1()
+    }
+
+    // 데이터 observing
+    fun observeData() {
+        myViewModel.fetchData().observe(this, Observer {
+            txt_misson1.text = it.toString()
+        })
     }
 }
