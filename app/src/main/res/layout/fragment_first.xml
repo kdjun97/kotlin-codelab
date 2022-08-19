@@ -19,21 +19,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="첫번째 화면 + safe args test"
+            android:textSize="20.0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:textSize="20.0dp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{fragment::btnSafeArgsTest}"
             android:text="safe args 테스트"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_misson1" />
+
+        <TextView
+            android:id="@+id/txt_misson1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="TextView"
+            android:textSize="20.0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/btn_misson1Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Add Number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_misson1"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:onClick="@{fragment::btnSafeArgsTest}"/>
+            android:onClick="@{fragment::btnAdd}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

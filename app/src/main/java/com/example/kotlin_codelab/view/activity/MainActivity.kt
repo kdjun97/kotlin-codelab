@@ -3,14 +3,22 @@ package com.example.kotlin_codelab.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.kotlin_codelab.R
+import com.example.kotlin_codelab.viewmodel.MyViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
+// 여기서 선언한 것 중에 DI를 해야하는 것이 있음.
+// 여기서 hilt를 쓸거임 라는 선언
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    lateinit var myViewModel : MyViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("Activity LifeCycle", "onCreate!")
         super.onCreate(savedInstanceState)
@@ -21,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         bottom_navigation.setupWithNavController(navController) // nav graph setup
 
+        myViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
         // Navigate Override
         /*
         bottom_navigation.setOnNavigationItemSelectedListener {
