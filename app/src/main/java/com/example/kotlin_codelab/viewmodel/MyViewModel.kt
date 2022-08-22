@@ -1,5 +1,6 @@
 package com.example.kotlin_codelab.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.kotlin_codelab.model.data.CommunityModel
@@ -19,6 +20,11 @@ class MyViewModel @Inject constructor(val missionRepository: MissionRepository) 
         return missionRepository.Mission2
     }
 
+    // mission3 숫자를 불러오는 함수
+    fun fetchData3() : LiveData<Int> {
+        return missionRepository.Mission3
+    }
+
     fun addMission1() {
         missionRepository.addMission1()
     }
@@ -29,5 +35,21 @@ class MyViewModel @Inject constructor(val missionRepository: MissionRepository) 
 
     fun deleteMission2(target: CommunityModel) {
         missionRepository.deleteMission2(target)
+    }
+
+    fun mission3_one() : String {
+        return missionRepository.mission3_one()
+    }
+
+    suspend fun mission3_two() : String {
+        return missionRepository.mission3_two()
+    }
+
+    suspend fun mission3_three() : String {
+        return missionRepository.mission3_three()
+    }
+
+    fun mission3_four() : String {
+        return missionRepository.mission3_four()
     }
 }
