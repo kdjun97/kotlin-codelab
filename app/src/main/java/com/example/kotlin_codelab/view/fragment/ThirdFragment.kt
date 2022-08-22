@@ -44,14 +44,13 @@ class ThirdFragment : Fragment() {
 
         CoroutineScope(Dispatchers.Main).launch {
             // for job1
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.Default).launch {
                 for (i in 1..10) {
-                    CoroutineScope(Dispatchers.Default).launch {
-                        text += myViewModel.mission3_one()
-                    }.join()
-                    txt_mission3.text = text
+                    text += myViewModel.mission3_one()
                 }
             }.join()
+            txt_mission3.text = text
+
             text+=" end job1\n"
 
             // for job2
@@ -66,14 +65,13 @@ class ThirdFragment : Fragment() {
 
             // for job4
             job4 = CoroutineScope(Dispatchers.Main).launch {
-                while(true) {
-                    CoroutineScope(Dispatchers.Default).launch {
-                        text += myViewModel.mission3_four()
-                        delay(1000)
-                    }.join()
+                while (true) {
+                    text += myViewModel.mission3_four()
+                    delay(1000)
                     txt_mission3.text=text
                 }
             }
+            job4!!.join()
         }
     }
 
