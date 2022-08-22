@@ -18,7 +18,7 @@
 	  참고 : https://blog.naver.com/crazem/222738984114   
 
 **2.** ~~라우팅시, 이전 페이지 넘버를 safe Args로 넘겨서 ToastMessage로 보여줄 것임.~~  
-**3.** 전체적인 구조는 안드로이드 개발의 표준인 MVVM 패턴으로 작성  
+**3.** ~~전체적인 구조는 안드로이드 개발의 표준인 MVVM 패턴으로 작성~~  
 
 ✔️ Check List  
 
