@@ -2,6 +2,8 @@
 
 요구사항 : LiveData, Observing, NavGraph, ViewModel, Hilt, ListAdapter, Coroutine, Safe Args 사용 (MVVM Design Pattern 이용)  
 
+[Youtube Link](https://youtu.be/NHw9X4qOmdM)  
+
 **1.** ~~하단 네비게이션 바를 통해서 routing~~  
 - ~~navGraph 버전은 "2.4.0-alpha01" 이상으로, 안드로이드에서 제공해주는 기본적인 fragment 재활용을 사용하자.~~  
 - 갈 페이지는,  
