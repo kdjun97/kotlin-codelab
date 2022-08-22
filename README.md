@@ -13,7 +13,7 @@
   - ~~Recycler view를 이용한 커뮤니티(viewModel , ListAdapter를 사용해서 구현)~~  
     참고 : https://blog.naver.com/crazem/222755202559   
   - [Mission3]
-  - 코루틴 + suspend fun 을 사용해서 숫자를 순서대로 보여주는 페이지 , (viewModel , LiveData 사용)  
+  - 코루틴 + suspend fun 을 사용해서 숫자를 순서대로 보여주는 페이지 , (viewModel , LiveData 사용) -> LiveData는 사용하지 않음  
     Ex) 1 10번, 2 10번, 3 10번, 4 무한. 1,4는 Coroutine으로, 2,3은 suspend 함수로 프린트. Delay 금지 + 4번은 버튼으로 코루틴을 cancel 할 수 있어야 함.  
 	  참고 : https://blog.naver.com/crazem/222738984114   
 
@@ -26,3 +26,4 @@
 - Safe Args로 Fragment간 데이터 교환 완료
 - Mission1 완료
 - Mission2 완료
+- Mission3 완료

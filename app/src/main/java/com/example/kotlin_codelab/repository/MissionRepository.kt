@@ -1,5 +1,6 @@
 package com.example.kotlin_codelab.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.kotlin_codelab.model.data.CommunityModel
@@ -11,6 +12,9 @@ class MissionRepository {
 
     val _mission2 = MutableLiveData<MutableList<CommunityModel>>()
     val Mission2: LiveData<MutableList<CommunityModel>> get() = _mission2
+
+    val _mission3 = MutableLiveData<Int>()
+    val Mission3: LiveData<Int> get() = _mission3
 
     var communityList = ArrayList<CommunityModel>()
 
@@ -38,5 +42,33 @@ class MissionRepository {
         var idx = communityList.indexOf(target)
         communityList.removeAt(idx)
         _mission2.value = communityList
+    }
+
+    fun mission3_one() : String {
+        Log.d("1111", "1")
+        return "1"
+    }
+
+    suspend fun mission3_two() : String {
+        var text : String = ""
+        for (i in 1..10) {
+            Log.d("2222","2")
+            text+="2"
+        }
+        return text
+    }
+
+    suspend fun mission3_three() : String {
+        var text : String = ""
+        for (i in 1..10) {
+            Log.d("3333","3")
+            text+="3"
+        }
+        return text
+    }
+
+    fun mission3_four() : String {
+        Log.d("4444", "4")
+        return "4"
     }
 }
